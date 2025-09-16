@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My GitHub Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to my Github</h1>
-  <img src="https://i.postimg.cc/0223pBjM/Whats-App-Image-2025-08-30-at-2-17-06-PM.jpg" width="300px" height="300px">
+  <h1>Welcome to my Github Portfolio</h1>
+  
+  <div class="image-container">
+    <img src="https://i.postimg.cc/0223pBjM/Whats-App-Image-2025-08-30-at-2-17-06-PM.jpg" 
+         alt="My Photo" width="300" height="300">
+  </div>
 
   <h2>Hi there 👋, I'm Rubi</h2>
 
@@ -20,5 +27,31 @@
     <li>Git & GitHub</li>
     <li>VS Code, Linux Terminal</li>
   </ul>
+
+  <h3>📫 Connect with me</h3>
+  <p>Email: your-email@example.com</p>
 </body>
 </html>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;   /* Center all text */
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  margin: 20px 0;
+}
+
+img {
+  border-radius: 50%;   /* Makes image round */
+  border: 3px solid #555;
+}
+
