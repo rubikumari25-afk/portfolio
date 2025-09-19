@@ -1,4 +1,122 @@
-*{
-  margin: 0;
-  padding: 0;
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #0f172a; /* slate-900 */
+  background: #ffffff; /* light theme */
+  line-height: 1.6;
+}
+
+:root {
+  --primary: #2563eb; /* blue-600 */
+  --primary-100: #dbeafe; /* blue-100 */
+  --muted: #64748b; /* slate-500 */
+  --border: #e5e7eb; /* gray-200 */
+  --card-bg: #ffffff;
+  --shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+  --radius: 14px;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 0;
+  gap: 16px;
+}
+.brand .name { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: 0.2px; color: var(--primary); }
+.brand .tagline { margin: 2px 0 0; font-weight: 600; color: var(--muted); font-size: 14px; }
+
+.nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.nav a {
+  text-decoration: none;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all .2s ease;
+}
+.nav a:hover { color: var(--primary); border-color: var(--primary); background: var(--primary-100); }
+
+.section { padding: 56px 0; }
+.section-title {
+  margin: 0 0 18px;
+  font-size: 22px;
+  letter-spacing: 0.3px;
+  color: #0f172a;
+}
+
+.grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+.grid.three { grid-template-columns: 1fr; }
+@media (min-width: 800px) {
+  .grid { grid-template-columns: 1.2fr 0.8fr; gap: 22px; }
+  .grid.three { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+.card.highlight { background: linear-gradient(0deg, #ffffff, #ffffff), var(--card-bg); border-color: #dbeafe; }
+.card-title { margin: 0 0 10px; font-size: 18px; font-weight: 700; }
+.card-text { margin: 0 0 12px; color: #1f2937; }
+
+.info-list { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 10px; }
+.info-list li { display: flex; align-items: baseline; gap: 10px; }
+.info-list span { color: var(--muted); min-width: 80px; }
+.info-list strong { font-weight: 700; }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+.stat { text-align: center; background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+.stat-number { font-weight: 800; color: var(--primary); }
+.stat-label { color: var(--muted); font-size: 12px; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 10px; }
+.badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f1f5f9; /* slate-100 */
+  color: #0f172a;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 14px;
+}
+.badge:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-100); }
+
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 640px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+.contact-item { background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+.contact-label { color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+.contact-link { color: #0f172a; text-decoration: none; font-weight: 700; word-break: break-word; }
+.contact-link:hover { color: var(--primary); text-decoration: underline; }
+
+.site-footer { border-top: 1px solid var(--border); background: #ffffff; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; gap: 12px; }
+.back-to-top { color: var(--primary); text-decoration: none; font-weight: 700; }
+.back-to-top:hover { text-decoration: underline; }
+
+/* Small adjustments for mobile */
+@media (max-width: 480px) {
+  .brand .name { font-size: 24px; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .nav a { font-size: 13px; padding: 7px 10px; }
+  .section { padding: 40px 0; }
 }
