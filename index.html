@@ -1,32 +1,256 @@
-import "./global.css";
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rubi Kumari • Aspiring Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="description" content="Personal portfolio of Rubi Kumari – Aspiring Web Developer. About, skills, hobbies, career goal, and contact." />
+  </head>
+  <body id="top">
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <h1 class="name">Rubi Kumari</h1>
+          <p class="tagline">Aspiring Web Developer</p>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#hobbies">Hobbies</a>
+          <a href="#goal">Career Goal</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-import { Toaster } from "@/components/ui/toaster";
-import { createRoot } from "react-dom/client";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import Layout from "./components/Layout";
+    <main>
+      <section class="section" id="about">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="grid">
+            <article class="card">
+              <h3 class="card-title">Hello, I'm Rubi</h3>
+              <p class="card-text">I am a student of SOP in Navgurukul.</p>
+              <ul class="info-list">
+                <li><span>Age</span><strong>19 years old</strong></li>
+                <li><span>Address</span><strong>Pune, Navgurukul</strong></li>
+                <li><span>Experience</span><strong>Basic knowledge about HTML, CSS, and binary system</strong></li>
+              </ul>
+            </article>
+            <article class="card highlight">
+              <h3 class="card-title">Quick Profile</h3>
+              <p class="card-text">Focused on building clean, simple web pages while learning core web fundamentals.</p>
+              <div class="stats">
+                <div class="stat">
+                  <div class="stat-number">HTML</div>
+                  <div class="stat-label">Basics</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number">CSS</div>
+                  <div class="stat-label">Basics</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number">Binary</div>
+                  <div class="stat-label">Concepts</div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-const queryClient = new QueryClient();
+      <section class="section" id="skills">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <article class="card">
+            <div class="badges">
+              <span class="badge">Basic HTML</span>
+              <span class="badge">Basic CSS</span>
+              <span class="badge">Basic knowledge of web development</span>
+            </div>
+          </article>
+        </div>
+      </section>
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Index />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      <section class="section" id="hobbies">
+        <div class="container">
+          <h2 class="section-title">Hobbies</h2>
+          <div class="grid three">
+            <article class="card">
+              <h3 class="card-title">Reading books</h3>
+              <p class="card-text">I like learning new ideas and perspectives through reading.</p>
+            </article>
+            <article class="card">
+              <h3 class="card-title">Coding</h3>
+              <p class="card-text">Practicing small projects helps me grow step by step.</p>
+            </article>
+            <article class="card">
+              <h3 class="card-title">Exploring creative ideas</h3>
+              <p class="card-text">I enjoy trying new designs and layouts to improve my skills.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-createRoot(document.getElementById("root")!).render(<App />);
+      <section class="section" id="goal">
+        <div class="container">
+          <h2 class="section-title">Career Goal</h2>
+          <article class="card">
+            <p class="card-text">To become a professional Web Developer.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <article class="card">
+            <div class="contact-grid">
+              <div class="contact-item">
+                <div class="contact-label">Email</div>
+                <a class="contact-link" href="mailto:your-email@example.com">your-email@example.com</a>
+              </div>
+              <div class="contact-item">
+                <div class="contact-label">GitHub</div>
+                <a class="contact-link" href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year">2025</span> Rubi Kumari. All rights reserved.</p>
+        <a href="#top" class="back-to-top">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #0f172a; /* slate-900 */
+  background: #ffffff; /* light theme */
+  line-height: 1.6;
+}
+
+:root {
+  --primary: #2563eb; /* blue-600 */
+  --primary-100: #dbeafe; /* blue-100 */
+  --muted: #64748b; /* slate-500 */
+  --border: #e5e7eb; /* gray-200 */
+  --card-bg: #ffffff;
+  --shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+  --radius: 14px;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 0;
+  gap: 16px;
+}
+.brand .name { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: 0.2px; color: var(--primary); }
+.brand .tagline { margin: 2px 0 0; font-weight: 600; color: var(--muted); font-size: 14px; }
+
+.nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.nav a {
+  text-decoration: none;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all .2s ease;
+}
+.nav a:hover { color: var(--primary); border-color: var(--primary); background: var(--primary-100); }
+
+.section { padding: 56px 0; }
+.section-title {
+  margin: 0 0 18px;
+  font-size: 22px;
+  letter-spacing: 0.3px;
+  color: #0f172a;
+}
+
+.grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+.grid.three { grid-template-columns: 1fr; }
+@media (min-width: 800px) {
+  .grid { grid-template-columns: 1.2fr 0.8fr; gap: 22px; }
+  .grid.three { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+.card.highlight { background: linear-gradient(0deg, #ffffff, #ffffff), var(--card-bg); border-color: #dbeafe; }
+.card-title { margin: 0 0 10px; font-size: 18px; font-weight: 700; }
+.card-text { margin: 0 0 12px; color: #1f2937; }
+
+.info-list { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 10px; }
+.info-list li { display: flex; align-items: baseline; gap: 10px; }
+.info-list span { color: var(--muted); min-width: 80px; }
+.info-list strong { font-weight: 700; }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+.stat { text-align: center; background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+.stat-number { font-weight: 800; color: var(--primary); }
+.stat-label { color: var(--muted); font-size: 12px; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 10px; }
+.badge {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f1f5f9; /* slate-100 */
+  color: #0f172a;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 14px;
+}
+.badge:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-100); }
+
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 640px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+.contact-item { background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+.contact-label { color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+.contact-link { color: #0f172a; text-decoration: none; font-weight: 700; word-break: break-word; }
+.contact-link:hover { color: var(--primary); text-decoration: underline; }
+
+.site-footer { border-top: 1px solid var(--border); background: #ffffff; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; gap: 12px; }
+.back-to-top { color: var(--primary); text-decoration: none; font-weight: 700; }
+.back-to-top:hover { text-decoration: underline; }
+
+/* Small adjustments for mobile */
+@media (max-width: 480px) {
+  .brand .name { font-size: 24px; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .nav a { font-size: 13px; padding: 7px 10px; }
+  .section { padding: 40px 0; }
+}
